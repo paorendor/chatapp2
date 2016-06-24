@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Whatsapp</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="title_activity_home">ChatApp</string>
+    <string name="title_activity_contacts">Contacts</string>
+    <string name="contacts">Contacts</string>
+    <string name="my_profile">MyProfile</string>
+    <string name="register">Register</string>
+    <string name="title_activity_display_contact">DisplayContact</string>
+    <string name="to">To:</string>
+</resources>
