@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 
+import com.example.paorendor.newchatapp.R;
+
 import java.util.List;
 
 /**
@@ -20,7 +22,7 @@ public class ProfileAdapter extends ArrayAdapter<Message> {
     private List<Message> mMessageList;
 
     public ProfileAdapter(Context context, List<Message> objects) {
-        super(context 0, objects);
+        super(context, 0, objects);
         this.mContext = context;
         this.mMessageList = objects;
     }
@@ -29,18 +31,15 @@ public class ProfileAdapter extends ArrayAdapter<Message> {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(android.R.layout.profilemessageitem, parent, false);
+        View view = inflater.inflate(R.layout.message_item, parent, false);
 
-        TextView userName = (TextView) view.findViewById(R.id.tv_user_name); 
-        TextView userMessage = (TextView) view.findViewById(R.id.tv_message); 
-        TextView time = (TextView) view.findViewById(R.id.tv_time);
-
-        Message message = mMessageList.get(position);
-
-
+//        TextView userName = (TextView) view.findViewById(R.id.tv_user_name); 
+//        TextView userMessage = (TextView) view.findViewById(R.id.tv_message); 
+//        TextView time = (TextView) view.findViewById(R.id.tv_time);
+//
+//        Message message = mMessageList.get(position);
 
         return super.getView(position, convertView, parent);
-
 
     }
 }
