@@ -25,6 +25,14 @@ public class Message {
         this.senderPhotoUrl = senderPhotoUrl;
     }
 
+    public Message(String message, String senderName, Date time) {
+        this.id = 0;
+        this.message = message;
+        this.senderName = senderName;
+        this.time = time;
+        this.senderPhotoUrl = "";
+    }
+
     public int getId() {
         return id;
     }

@@ -10,4 +10,6 @@
     <string name="register">Register</string>
     <string name="title_activity_display_contact">DisplayContact</string>
     <string name="to">To:</string>
+    <string name="new_message">New Message</string>
+    <string name="search_contact">Search Contact</string>
 </resources>

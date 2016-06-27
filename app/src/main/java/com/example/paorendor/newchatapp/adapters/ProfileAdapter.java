@@ -1,15 +1,15 @@
 package com.example.paorendor.newchatapp.adapters;
 
 import android.content.Context;
-import android.os.Message;
+import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-
 import com.example.paorendor.newchatapp.R;
+import com.example.paorendor.newchatapp.pojo.Message;
 
 import java.util.List;
 
@@ -29,17 +29,26 @@ public class ProfileAdapter extends ArrayAdapter<Message> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        LayoutInflater inflater = (LayoutInflater) mContext
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.profile_message_item, parent, false);
+        Message message = mMessageList.get(position);
 
-        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.message_item, parent, false);
+        TextView userName = (TextView) view.findViewById(R.id.tv_user_name);
+        TextView userMessage = (TextView) view.findViewById(R.id.tv_message);
+        TextView time = (TextView) view.findViewById(R.id.tv_time);
 
-//        TextView userName = (TextView) view.findViewById(R.id.tv_user_name); 
-//        TextView userMessage = (TextView) view.findViewById(R.id.tv_message); 
-//        TextView time = (TextView) view.findViewById(R.id.tv_time);
-//
-//        Message message = mMessageList.get(position);
+        userName.setText(message.getSenderName());
+        userMessage.setText(message.getMessage());
 
-        return super.getView(position, convertView, parent);
+        String convertedTime = DateUtils.getRelativeTimeSpanString(message.getTime().getTime(),
+                System.currentTimeMillis(), DateUtils.DAY_IN_MILLIS).toString();
+        return view;
 
+    }
+
+    @Override
+    public Message getItem(int position) {
+        return mMessageList.get(position);
     }
 }

@@ -41,8 +41,13 @@
             android:label="@string/title_activity_display_contact"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MyProfileActivity" />
-        <activity android:name=".NewMessageActivity" />
-        <activity android:name=".SearchContactActivity"></activity>
+        <activity
+            android:name=".NewMessageActivity"
+            android:label="@string/new_message"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SearchContactActivity"
+            android:label="@string/search_contact"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

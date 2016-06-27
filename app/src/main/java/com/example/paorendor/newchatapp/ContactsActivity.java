@@ -1,5 +1,6 @@
 package com.example.paorendor.newchatapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.paorendor.newchatapp.adapters.ContactAdapter;
@@ -40,6 +42,16 @@ public class ContactsActivity extends AppCompatActivity {
     private void initView() {
 
         ListView contactListView = (ListView) findViewById(R.id.lv_contact);
+        if (contactListView != null) {
+            contactListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent = new Intent(ContactsActivity.this, DisplayContactActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
+
 
         List<Contact> contacts = new ArrayList<>();
 
